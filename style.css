@@ -1,0 +1,30 @@
+body {
+  background-color: black;
+  color: lime;
+  font-family: monospace;
+  text-align: center;
+}
+.hidden {
+  display: none;
+}
+.blinking {
+  animation: blink 1s infinite;
+}
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+.tab {
+  display: none;
+}
+.active-tab {
+  display: block;
+}
+button {
+  background-color: lime;
+  color: black;
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+}

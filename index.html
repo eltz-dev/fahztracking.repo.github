@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fahz-Track</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/face-api.js"></script>
+</head>
+<body>
+  <h1 class="blinking">Fahz-Track</h1>
+  <input type="password" id="keyInput" placeholder="Enter Key">
+  <input type="checkbox" onclick="toggleKey()"> Show Key
+  <br>
+  <button onclick="verifyKey()">Verify Key</button>
+  <p id="status"></p>
+  <div id="countdown"></div>
+
+  <div id="mainFeatures" class="hidden">
+    <button onclick="switchTab('cameraFront')">Kamera Depan</button>
+    <button onclick="switchTab('cameraBack')">Kamera Belakang</button>
+    <button onclick="switchTab('flashlight')">Senter</button>
+    <button onclick="switchTab('clock')">Detect Clock</button>
+    <button onclick="switchTab('location')">Detect Your Location</button>
+    <button onclick="switchTab('genderDetect')">Deteksi Gender</button>
+    <button onclick="switchTab('batteryInfo')">Baterai</button>
+    <button onclick="switchTab('ispInfo')">ISP Info</button>
+    <button onclick="showDevTools()">Tampilkan Developer Tools</button>
+
+    <div id="cameraFront" class="tab"><video id="videoFront" width="300" autoplay muted></video></div>
+    <div id="cameraBack" class="tab"><video id="videoBack" width="300" autoplay muted></video></div>
+    <div id="flashlight" class="tab">
+      <button onclick="toggleFlash(true)">Nyalakan Senter</button>
+      <button onclick="toggleFlash(false)">Matikan Senter</button>
+    </div>
+    <div id="clock" class="tab">
+      <button onclick="detectClock()">Detect Clock</button>
+      <p id="clockDisplay"></p>
+    </div>
+    <div id="location" class="tab"><p id="locationResult"></p></div>
+    <div id="genderDetect" class="tab">
+      <video id="genderVideo" width="300" autoplay muted></video>
+      <p id="genderResult"></p>
+    </div>
+    <div id="batteryInfo" class="tab"><p id="batteryStatus"></p></div>
+    <div id="ispInfo" class="tab"><p id="ispStatus"></p></div>
+    <div id="developer" class="tab hidden">
+      <h2>Developer Tools</h2>
+      <p>Nama: Fahz</p>
+      <p>IP: [RAHASIA]</p>
+      <p>Kota: Jogja</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
